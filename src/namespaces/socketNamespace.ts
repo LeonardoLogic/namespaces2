@@ -7,11 +7,11 @@ export function setupSocketNamespace(io: Server) {
 
     socketNamespace.on("connection", ( socket ) => {
 
-        console.log(`[SocketNamespace1] Client connected: ${socket.id}`);
+        console.log(`[SocketNamespace] Client connected: ${socket.id}`);
 
         socket.on("disconnect", () => {
 
-            console.log(`[SocketNamespace1] Client disconnected: ${socket.id}`);
+            console.log(`[SocketNamespace] Client disconnected: ${socket.id}`);
 
         });
 
@@ -19,9 +19,12 @@ export function setupSocketNamespace(io: Server) {
 
             const decoded:any = jwt.verify(msg, 'a-string-secret-at-least-256-bits-long');
 
-            console.log(`[SocketNamespace1] Received message: ${decoded.name}`);
+            console.log(`[SocketNamespace] Received message: ${decoded.name}`);
+
+            socket.emit("message", `Hello ${decoded.name}, you are authenticated!`);
 
         })
+        
 
     });
 
@@ -29,13 +32,23 @@ export function setupSocketNamespace(io: Server) {
 
     namespace.on("connection", ( socket ) => {
 
-        console.log(`[namespace3] Client connected: ${ socket.id }`);
+        console.log(`[SocketNamespace] Client connected: ${socket.id}`);
 
         socket.on("disconnect", () => {
 
-            console.log(`[namespace3] Client disconnected: ${ socket.id }`);
+            console.log(`[SocketNamespace] Client disconnected: ${socket.id}`);
 
         });
+
+        socket.on("auth", async ( msg ) => {
+
+            const decoded:any = jwt.verify(msg, 'a-string-secret-at-least-256-bits-long');
+
+            console.log(`[SocketNamespace] Received message: ${decoded.name}`);
+
+            socket.emit("message", `Hello ${decoded.name}, you are authenticated!`);
+
+        })
 
     });
 

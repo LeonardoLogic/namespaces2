@@ -1,4 +1,4 @@
-import { Socket } from "socket.io";
+import { Socket, Server } from "socket.io";
 import { RoomService } from "./roomService";
 
 /**
@@ -7,12 +7,12 @@ import { RoomService } from "./roomService";
 export class RootService {
     private roomService: RoomService;
 
-    constructor( private socket: Socket ) {
-        this.roomService = new RoomService(socket);
+    constructor( private socket: Socket, private io: Server ) {
+        this.roomService = new RoomService(socket, io);
     }
 
     public setup(): void {
         console.log(`[RootService] started for ${this.socket.id}`);
-        this.roomService.setup( );
+        this.roomService.setup();
     }
 }

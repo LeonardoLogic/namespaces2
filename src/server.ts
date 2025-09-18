@@ -19,7 +19,7 @@ export class SocketServer {
     public start( ): void {
         // Default namespace
         this.io.on("connection", (socket: Socket) => {
-            new RootService(socket).setup();
+            new RootService(socket, this.io).setup();
         });
 
         // Setup /api and /socket namespaces
