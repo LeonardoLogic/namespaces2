@@ -6,7 +6,7 @@ export async function getUser(req:Request, res:Response) {
  const userId:number = Number(req.body.userID);
 
     if ( !userId ) {
-        return res.status(400).json( { message: "userID is required" });
+        return res.status(400).json({ message: "userID is required" });
     }
     try {
         const user = await UserService.getUserById(userId);

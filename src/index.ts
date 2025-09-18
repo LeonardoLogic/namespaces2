@@ -5,5 +5,5 @@ import { SocketServer } from "./server";
 App.startHTTP(3000);
 
 // Start Socket.IO server
-const socketServer = new SocketServer( App );
+const socketServer = new SocketServer( App);
 socketServer.start( );

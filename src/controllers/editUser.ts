@@ -5,7 +5,7 @@ export async function editUser(req: Request, res: Response) {
 
     const userID: number = Number(req.body.userID);
 
-    if ( !userID || ( !req.body.email && !req.body.username ) ) {
+    if ( !userID || (!req.body.email && !req.body.username ) ) {
         return res.status(404).json({ message: "userID and at least one of email or username are required" });
     }
 

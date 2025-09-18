@@ -6,7 +6,7 @@ export async function getAllUsers(req: Request, res: Response) {
         const users = await UserService.getAllUsers( );
         res.json({ users });
     } catch (error) {
-        res.status(500).json( { message: "Error retrieving users", error });
+        res.status(500).json({ message: "Error retrieving users", error });
     }
 
 }

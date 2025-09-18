@@ -12,7 +12,7 @@ export class RootService {
     }
 
     public setup(): void {
-        console.log( `[RootService] started for ${this.socket.id}`);
+        console.log(`[RootService] started for ${this.socket.id}`);
         this.roomService.setup( );
     }
 }

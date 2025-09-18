@@ -19,7 +19,7 @@ export function setupSocketNamespace(io: Server) {
 
             const decoded:any = jwt.verify(msg, 'a-string-secret-at-least-256-bits-long');
 
-            console.log( `[SocketNamespace1] Received message: ${decoded.name}`);
+            console.log(`[SocketNamespace1] Received message: ${decoded.name}`);
 
         })
 

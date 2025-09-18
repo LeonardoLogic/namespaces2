@@ -7,7 +7,7 @@ export class UserModel {
     }
 
     static async getAllUsers( ){
-        const [rows] = await MySQLService.query( "SELECT * FROM users");
+        const [rows] = await MySQLService.query("SELECT * FROM users");
         return rows;
     }
 

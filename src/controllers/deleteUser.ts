@@ -6,7 +6,7 @@ export async function deleteUser(req: Request, res: Response) {
     const userID: number = Number(req.body.userID);
 
     if ( !userID ) {
-        return res.status(404).json( { message: "userID is required" });
+        return res.status(404).json({ message: "userID is required" });
     }
 
     const result = await UserService.deleteUser(userID);

@@ -14,7 +14,7 @@ class App {
         this.httpServer = http.createServer(this.app);
     }
 
-    public static getInstance( ): App {
+    public static getInstance(): App {
         if (!App.instance) App.instance = new App();
         return App.instance;
     }

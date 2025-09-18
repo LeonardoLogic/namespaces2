@@ -7,7 +7,7 @@ export async function createUser(req: Request, res: Response) {
 
     if ( !username || !email ) { // validation check
 
-        return res.status(400).json( { message: "Name and email are required" });
+        return res.status(400).json({ message: "Name and email are required" });
 
     }
 

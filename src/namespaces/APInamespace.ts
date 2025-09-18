@@ -12,7 +12,7 @@ const apiRouter = Router();
 // Add middleware to parse JSON and URL-encoded bodies
 apiRouter.use( express.json( ) );
 
-apiRouter.use( express.urlencoded( { extended: true }));
+apiRouter.use( express.urlencoded({ extended: true }));
 
 apiRouter.post( "/createUser ", createUser );
 

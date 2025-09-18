@@ -11,7 +11,7 @@ export class SocketServer {
     private io: SocketIOServer;
 
     constructor(private app: typeof App) {
-        this.io = new SocketIOServer( this.app.httpServer, {
+        this.io = new SocketIOServer(this.app.httpServer, {
             cors: { origin: "*" }
         });
     }

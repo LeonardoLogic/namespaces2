@@ -15,7 +15,7 @@ export class UserService {
     /**
      * Create a new user
      */
-    static async createUser( name: string, email: string) {
+    static async createUser(name: string, email: string) {
         return await UserModel.createUser(name, email);
     }
 

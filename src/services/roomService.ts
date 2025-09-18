@@ -7,6 +7,6 @@ export class RoomService {
     constructor(private socket: Socket) {}
 
     public setup( ): void {
-        console.log( `[RoomService] started for ${this.socket.id}`);
+        console.log(`[RoomService] started for ${this.socket.id}`);
     }
 }

@@ -22,7 +22,7 @@ namespace.on("connect", () => {
 });
 
 sockets.on( "connect" , () => {
-    console.log( `[Client] Connected with id: ${sockets.id}`);
+    console.log(`[Client] Connected with id: ${sockets.id}`);
     sockets.disconnect();
 });
 
